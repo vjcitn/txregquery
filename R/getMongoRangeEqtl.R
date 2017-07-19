@@ -11,7 +11,7 @@
 #' mychrGo=17
 #' mystart=41196312-500*1000
 #' myend=41322262+500*1000
-#' res_eqtl=getMongoRangeEqtl(mychrGO,mystartGo,myendGo)
+#' res_eqtl=getMongoRangeEqtl(mychrGo,mystartGo,myendGo)
 #' res_eqtl
 #' }
 #' @export
