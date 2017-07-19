@@ -8,7 +8,7 @@
 #'@param mydb database name in mongodb
 #'@examples
 #'\dontrun{
-#' mychrGo=17
+#' mychrGo="chr17"
 #' mystartGo=41196312-500*1000
 #' myendGo=41322262+500*1000
 #' res_fp=getMongoRangeFp(mychrGo,mystartGo,myendGo)
