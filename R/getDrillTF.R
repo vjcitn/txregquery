@@ -13,7 +13,7 @@ getDrillTF<-function(mychr, mystart, myend, myfile,myip,myport=8047){
   require(DrillR)
   require(GenomicRanges)
   mydrill=rdrill(myip,myport)
-  myquery=paste0("select FILENAME,columns[0] as chr, columns[1] as `start`, columns[2] as `end`, columns[6] as pvalue FROM dfs.`,myfile,` where columns[1] >= ",mystart," and columns[2] <=",myend," and columns[0]='chr",mychr,"'");
+  myquery=paste0("select FILENAME,columns[0] as chr, columns[1] as `start`, columns[2] as `end`, columns[6] as pvalue FROM dfs.`",myfile,"` where columns[1] >= ",mystart," and columns[2] <=",myend," and columns[0]='chr",mychr,"'");
   myres=rd_query(mydrill,myquery)
   myres$start=as.numeric(myres$start)
   myres$end=as.numeric(myres$end)
