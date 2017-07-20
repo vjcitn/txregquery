@@ -8,6 +8,8 @@
 #'@param mydb database name in mongodb
 #'@examples
 #'\dontrun{
+#' require(GenomicRanges)
+#' require(mongolite)
 #' mychrGo=17
 #' mystartGo=41196312-500*1000
 #' myendGo=41322262+500*1000
