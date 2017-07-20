@@ -4,9 +4,7 @@
 \alias{getMongoRangeEqtl}
 \title{query eQTL from mongodb}
 \usage{
-getMongoRangeEqtl(mychr, mystart, myend,
-  mycoll = "Breast_Mammary_Tissue_Analysis.v6p.all_snpgene_pairs_eQTL",
-  mydb = "txregnet")
+getMongoRangeEqtl(mychr, mystart, myend, mycoll, mydb)
 }
 \arguments{
 \item{mychr}{chromosome}
@@ -24,10 +22,14 @@ query eQTL from mongodb
 }
 \examples{
 \dontrun{
+require(GenomicRanges)
+require(mongolite)
 mychrGo=17
-mystart=41196312-500*1000
-myend=41322262+500*1000
-res_eqtl=getMongoRangeEqtl(mychrGO,mystartGo,myendGo)
+mystartGo=41196312-500*1000
+myendGo=41322262+500*1000
+mycollGo = "Breast_Mammary_Tissue_Analysis.v6p.all_snpgene_pairs_eQTL"
+mydbGo="txregnet"
+res_eqtl=getMongoRangeEqtl(mychrGo,mystartGo,myendGo,mycollGo,mydbGo)
 res_eqtl
 }
 }

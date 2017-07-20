@@ -11,11 +11,13 @@
 #' mychrGo="chr17"
 #' mystartGo=41196312-500*1000
 #' myendGo=41322262+500*1000
-#' res_fp=getMongoRangeFp(mychrGo,mystartGo,myendGo)
+#' mycollGo="vHMEC_DS18406_footprint"
+#' mydbGo="txregnet"
+#' res_fp=getMongoRangeFp(mychrGo,mystartGo,myendGo,mycollGo,myendGo)
 #' res_fp
 #' }
 #' @export
-getMongoRangeFp<-function(mychr,mystart,myend,mycoll="vHMEC_DS18406_footprint",mydb="txregnet"){
+getMongoRangeFp<-function(mychr,mystart,myend,mycoll,mydb){
   require(mongolite)
   require(GenomicRanges)
   my_collection = mongo(collection = mycoll, db = mydb) # connect
@@ -26,5 +28,5 @@ getMongoRangeFp<-function(mychr,mystart,myend,mycoll="vHMEC_DS18406_footprint",m
   res=my_collection$find(myquery)
   myrange=GRanges(res$chr, IRanges(res$start, res$end), mcols=res)
   myrange
-  
+
 }
